@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CréditoJubilado – Préstamos para Jubilados y Pensionados en Argentina</title>
+  <meta name="description" content="Préstamos personales para jubilados y pensionados en Argentina. Aprobación rápida, sin garantía, cuotas fijas. Hasta $5.000.000. 100% online. Solicitá hoy." />
+  <meta name="keywords" content="préstamos jubilados argentina, créditos pensionados, préstamos ANSES, crédito jubilado rápido" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0A1F44;
+      --navy-mid: #112B5E;
+      --blue: #1A50A0;
+      --blue-light: #2565C7;
+      --teal: #00A878;
+      --teal-dark: #007A57;
+      --gold: #D4A843;
+      --cream: #F8F6F1;
+      --white: #FFFFFF;
+      --gray-50: #F7F8FA;
+      --gray-100: #ECEEF2;
+      --gray-300: #C4C9D4;
+      --gray-500: #8892A4;
+      --gray-700: #4A5568;
+      --gray-900: #1A202C;
+      --text: #1C2B45;
+      --text-light: #5A6A80;
+      --shadow-sm: 0 2px 8px rgba(10,31,68,0.08);
+      --shadow-md: 0 6px 24px rgba(10,31,68,0.12);
+      --shadow-lg: 0 16px 48px rgba(10,31,68,0.16);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow .3s;
+    }
+    .header.scrolled { box-shadow: var(--shadow-md); }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 72px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 22px; height: 22px; fill: white; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+    .logo-text span { color: var(--teal); }
+
+    nav { display: flex; gap: 6px; }
+    nav a {
+      padding: 8px 16px; border-radius: 8px;
+      font-size: .9rem; font-weight: 500;
+      color: var(--gray-700); text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    nav a:hover { background: var(--gray-50); color: var(--navy); }
+    .btn-nav {
+      background: var(--teal) !important; color: white !important;
+      padding: 10px 22px !important; font-weight: 600 !important;
+    }
+    .btn-nav:hover { background: var(--teal-dark) !important; }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 26px; height: 2px; background: var(--navy); border-radius: 2px; transition: .3s; }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 4px;
+      padding: 12px 24px 20px; background: white; border-top: 1px solid var(--gray-100);
+    }
+    .mobile-nav a { padding: 12px 16px; border-radius: 8px; font-weight: 500; color: var(--text); text-decoration: none; }
+    .mobile-nav a:hover { background: var(--gray-50); }
+    .mobile-nav .btn-nav { background: var(--teal); color: white; text-align: center; margin-top: 8px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #1a3a7a 100%);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&q=80');
+      background-size: cover; background-position: center 30%;
+      opacity: .18; mix-blend-mode: luminosity;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; z-index: 1;
+      background-image: radial-gradient(circle at 20% 50%, rgba(26,80,160,.35) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 20%, rgba(0,168,120,.2) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 1;
+      background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      padding-top: 80px; padding-bottom: 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,168,120,.15); border: 1px solid rgba(0,168,120,.4);
+      color: #4FDDB3; padding: 6px 16px; border-radius: 100px;
+      font-size: .85rem; font-weight: 600; margin-bottom: 20px;
+    }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #4FDDB3; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem); color: white; font-weight: 800;
+      margin-bottom: 24px; letter-spacing: -.5px;
+    }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--teal); color: white; border: none;
+      padding: 16px 32px; border-radius: 50px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      box-shadow: 0 4px 20px rgba(0,168,120,.4);
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,168,120,.5); }
+    .btn-secondary {
+      background: rgba(255,255,255,.1); color: white; border: 1.5px solid rgba(255,255,255,.3);
+      padding: 15px 32px; border-radius: 50px; font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: background .2s, border-color .2s;
+      backdrop-filter: blur(8px);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
+    .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; }
+    .hero-stat strong { font-size: 1.8rem; font-weight: 800; color: white; font-family: 'Playfair Display', serif; }
+    .hero-stat span { font-size: .8rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .5px; }
+
+    .hero-card-wrap {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-card {
+      background: white; border-radius: var(--radius-xl); padding: 36px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.3); width: 100%; max-width: 400px;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+    @keyframes floatCard { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .card-title { font-size: .8rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .card-amount { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .card-sub { font-size: .9rem; color: var(--gray-500); margin-bottom: 24px; }
+    .card-row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--gray-100); }
+    .card-row:last-of-type { border-bottom: 1px solid var(--gray-100); }
+    .card-label { font-size: .85rem; color: var(--gray-500); }
+    .card-value { font-size: .9rem; font-weight: 600; color: var(--navy); }
+    .card-btn {
+      display: block; width: 100%; margin-top: 24px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: white;
+      border: none; padding: 14px; border-radius: 12px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; text-align: center; transition: transform .2s, box-shadow .2s;
+    }
+    .card-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,168,120,.35); }
+    .card-badge {
+      display: flex; align-items: center; gap: 8px; margin-top: 16px;
+      background: #F0FFF9; border-radius: 8px; padding: 10px 14px;
+    }
+    .card-badge svg { width: 16px; height: 16px; fill: var(--teal); flex-shrink: 0; }
+    .card-badge span { font-size: .8rem; color: var(--teal-dark); font-weight: 500; }
+
+    /* ── TRUST BAND ── */
+    .trust-band {
+      background: var(--cream); padding: 40px 24px;
+      border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100);
+    }
+    .trust-band-inner { max-width: 1200px; margin: 0 auto; }
+    .trust-band h3 { text-align: center; font-size: .85rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 32px; font-family: 'DM Sans', sans-serif; }
+    .trust-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .trust-logo {
+      background: white; border: 1px solid var(--gray-100); border-radius: 10px;
+      padding: 12px 24px; display: flex; align-items: center; gap: 8px;
+      box-shadow: var(--shadow-sm); opacity: .75; transition: opacity .2s;
+    }
+    .trust-logo:hover { opacity: 1; }
+    .trust-logo-text { font-weight: 700; font-size: 1rem; color: var(--navy); }
+    .trust-pills { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .trust-pill {
+      display: flex; align-items: center; gap: 10px;
+      background: white; border: 1px solid var(--gray-100); border-radius: 50px;
+      padding: 10px 20px; box-shadow: var(--shadow-sm);
+    }
+    .trust-pill svg { width: 18px; height: 18px; fill: var(--teal); }
+    .trust-pill span { font-size: .9rem; font-weight: 600; color: var(--navy); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; font-size: .8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--teal); background: rgba(0,168,120,.1);
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .section-heading { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--navy); margin-bottom: 16px; }
+    .section-sub { font-size: 1.05rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* ── CALCULATOR ── */
+    .calc-section { background: var(--navy); }
+    .calc-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    }
+    .calc-info .section-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.8); }
+    .calc-info .section-heading { color: white; }
+    .calc-info .section-sub { color: rgba(255,255,255,.7); max-width: 100%; }
+    .calc-perks { list-style: none; margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
+    .calc-perks li { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.85); font-size: .95rem; }
+    .calc-perks li::before { content: ''; width: 20px; height: 20px; border-radius: 50%; background: var(--teal); flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
+
+    .calc-widget {
+      background: white; border-radius: var(--radius-xl); padding: 40px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.25);
+    }
+    .calc-widget h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 28px; }
+    .calc-group { margin-bottom: 24px; }
+    .calc-group label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .85rem; font-weight: 600; color: var(--gray-700); margin-bottom: 10px;
+    }
+    .calc-group label span { font-weight: 700; color: var(--blue); font-size: 1rem; }
+    .calc-group input[type="range"] {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 6px; border-radius: 3px; background: var(--gray-100);
+      outline: none; cursor: pointer;
+    }
+    .calc-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+      background: var(--blue); cursor: pointer; border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(26,80,160,.4);
+    }
+    .range-labels { display: flex; justify-content: space-between; margin-top: 6px; font-size: .75rem; color: var(--gray-500); }
+    .calc-divider { height: 1px; background: var(--gray-100); margin: 28px 0; }
+    .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .calc-result {
+      background: var(--gray-50); border-radius: 12px; padding: 18px;
+      text-align: center;
+    }
+    .calc-result.highlight { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: white; }
+    .calc-result-label { font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--gray-500); margin-bottom: 6px; }
+    .calc-result.highlight .calc-result-label { color: rgba(255,255,255,.8); }
+    .calc-result-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--navy); }
+    .calc-result.highlight .calc-result-value { color: white; }
+    .calc-disclaimer { font-size: .75rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 20px; }
+    .calc-cta {
+      display: block; width: 100%; background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: white; border: none; padding: 16px; border-radius: 12px;
+      font-size: 1rem; font-weight: 700; cursor: pointer; text-align: center;
+      transition: transform .2s, box-shadow .2s; text-decoration: none;
+    }
+    .calc-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,80,160,.4); }
+    .tna-row { display: flex; justify-content: space-between; align-items: center; background: #EFF6FF; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; }
+    .tna-row span { font-size: .82rem; font-weight: 600; color: var(--blue); }
+    .tna-row strong { color: var(--navy); }
+
+    /* ── BENEFITS ── */
+    .benefits-section { background: var(--gray-50); }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;
+    }
+    .benefit-card {
+      background: white; border-radius: var(--radius-lg); padding: 32px 28px;
+      border: 1px solid var(--gray-100); transition: transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+    }
+    .benefit-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-icon {
+      width: 56px; height: 56px; border-radius: 14px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(0,168,120,.1), rgba(26,80,160,.08));
+    }
+    .benefit-icon svg { width: 26px; height: 26px; fill: var(--teal); }
+    .benefit-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
+    .benefit-card p { font-size: .9rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; position: relative; }
+    .steps-grid::before {
+      content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      z-index: 0;
+    }
+    .step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+    .step-num {
+      width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: white;
+      box-shadow: 0 8px 24px rgba(26,80,160,.3); border: 4px solid white;
+    }
+    .step h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+    .step p { font-size: .85rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ── REQUIREMENTS ── */
+    .reqs-section { background: linear-gradient(135deg, #F0F7FF, var(--cream)); }
+    .reqs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .reqs-image { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .reqs-image img { width: 100%; height: 400px; object-fit: cover; display: block; }
+    .reqs-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .req-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: white; border-radius: 12px; padding: 16px 20px; box-shadow: var(--shadow-sm);
+    }
+    .req-icon {
+      width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .req-icon svg { width: 18px; height: 18px; fill: white; }
+    .req-text strong { display: block; font-size: .9rem; color: var(--navy); margin-bottom: 2px; }
+    .req-text span { font-size: .82rem; color: var(--text-light); }
+
+    /* ── TESTIMONIALS ── */
+    .testi-section { background: var(--navy); overflow: hidden; }
+    .testi-section .section-heading { color: white; }
+    .testi-section .section-sub { color: rgba(255,255,255,.7); }
+    .testi-section .section-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.8); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .testi-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg); padding: 32px 28px; backdrop-filter: blur(8px);
+      transition: transform .3s; position: relative;
+    }
+    .testi-card:hover { transform: translateY(-4px); }
+    .testi-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .testi-card blockquote { font-size: .95rem; color: rgba(255,255,255,.85); line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar {
+      width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .testi-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .testi-name { font-weight: 700; color: white; font-size: .95rem; }
+    .testi-meta { font-size: .8rem; color: rgba(255,255,255,.55); }
+    .testi-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(0,168,120,.2); color: #4FDDB3;
+      font-size: .72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+      border: 1px solid rgba(0,168,120,.3);
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--gray-50); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .faq-aside h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 12px; }
+    .faq-aside p { font-size: .95rem; color: var(--text-light); margin-bottom: 28px; line-height: 1.7; }
+    .faq-aside-img { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px; }
+    .faq-aside-img img { width: 100%; height: 220px; object-fit: cover; }
+    .faq-contact-box {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      border-radius: var(--radius); padding: 24px; color: white;
+    }
+    .faq-contact-box h4 { font-size: 1.1rem; margin-bottom: 8px; }
+    .faq-contact-box p { font-size: .85rem; opacity: .85; margin-bottom: 16px; }
+    .faq-contact-box a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--teal-dark); padding: 10px 20px;
+      border-radius: 8px; font-weight: 700; font-size: .9rem; text-decoration: none;
+      transition: transform .2s;
+    }
+    .faq-contact-box a:hover { transform: translateY(-1px); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: white; border-radius: var(--radius); border: 1px solid var(--gray-100);
+      overflow: hidden; transition: box-shadow .2s;
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 24px; cursor: pointer; user-select: none;
+      font-weight: 600; font-size: .95rem; color: var(--navy);
+    }
+    .faq-q svg { width: 20px; height: 20px; fill: var(--blue); transition: transform .3s; flex-shrink: 0; }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s;
+      padding: 0 24px; font-size: .92rem; color: var(--text-light); line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+    /* ── ABOUT ── */
+    .about-section { background: white; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-img-stack { position: relative; }
+    .about-img-main { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img-main img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .about-stat-card {
+      position: absolute; bottom: -20px; right: -20px;
+      background: white; border-radius: var(--radius); padding: 20px 24px;
+      box-shadow: var(--shadow-lg); border: 1px solid var(--gray-100);
+      text-align: center;
+    }
+    .about-stat-card strong { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); display: block; }
+    .about-stat-card span { font-size: .8rem; color: var(--gray-500); }
+    .about-stat-card2 {
+      position: absolute; top: -20px; left: -20px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      border-radius: var(--radius); padding: 16px 20px;
+      box-shadow: var(--shadow-lg); color: white; text-align: center;
+    }
+    .about-stat-card2 strong { font-family: 'Playfair Display', serif; font-size: 1.7rem; display: block; }
+    .about-stat-card2 span { font-size: .75rem; opacity: .85; }
+    .about-text .section-sub { margin-bottom: 28px; }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .about-value {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--gray-50); border-radius: 12px; padding: 16px;
+    }
+    .about-value-icon { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg, var(--teal), var(--blue)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-value-icon svg { width: 18px; height: 18px; fill: white; }
+    .about-value h4 { font-size: .9rem; color: var(--navy); margin-bottom: 2px; }
+    .about-value p { font-size: .8rem; color: var(--text-light); }
+
+    /* ── CONTACT ── */
+    .contact-section { background: linear-gradient(135deg, var(--cream), #EEF4FF); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-form-box {
+      background: white; border-radius: var(--radius-xl); padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-form-box h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .contact-form-box p { font-size: .9rem; color: var(--text-light); margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: .85rem; font-weight: 600; color: var(--gray-700); margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; border: 1.5px solid var(--gray-200, #E2E8F0); border-radius: 10px;
+      padding: 13px 16px; font-size: .95rem; color: var(--text); font-family: 'DM Sans', sans-serif;
+      transition: border-color .2s, box-shadow .2s; outline: none; background: var(--gray-50);
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,80,160,.1); background: white;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      display: block; width: 100%; background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white; border: none; padding: 16px; border-radius: 12px;
+      font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,120,.4); }
+    .form-note { font-size: .75rem; color: var(--gray-500); text-align: center; margin-top: 12px; }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-info-card {
+      background: white; border-radius: var(--radius-lg); padding: 24px;
+      box-shadow: var(--shadow-sm); display: flex; gap: 16px; align-items: flex-start;
+    }
+    .contact-info-icon {
+      width: 44px; height: 44px; border-radius: 11px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-info-icon svg { width: 20px; height: 20px; fill: white; }
+    .contact-info-card h4 { font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
+    .contact-info-card p, .contact-info-card a { font-size: .9rem; color: var(--text-light); text-decoration: none; }
+    .whatsapp-cta-box {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: var(--radius-lg); padding: 28px;
+      display: flex; align-items: center; gap: 20px; color: white;
+    }
+    .whatsapp-cta-box svg { width: 48px; height: 48px; fill: white; flex-shrink: 0; }
+    .whatsapp-cta-box h4 { font-size: 1.1rem; margin-bottom: 4px; }
+    .whatsapp-cta-box p { font-size: .85rem; opacity: .85; margin-bottom: 12px; }
+    .whatsapp-cta-box a {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: white; color: #128C7E; padding: 10px 20px;
+      border-radius: 8px; font-weight: 700; font-size: .9rem; text-decoration: none;
+    }
+
+    /* ── FLOATING WA ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      cursor: pointer; text-decoration: none;
+      animation: waBounce 3s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 32px; height: 32px; fill: white; }
+    @keyframes waBounce { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.5); } 50% { box-shadow: 0 8px 32px rgba(37,211,102,.7); } }
+    .wa-tooltip {
+      position: fixed; bottom: 96px; right: 28px; z-index: 999;
+      background: white; border-radius: 10px; padding: 10px 16px;
+      font-size: .85rem; font-weight: 600; color: var(--navy);
+      box-shadow: var(--shadow-md); white-space: nowrap;
+      animation: tooltipFade 2s ease-in-out infinite;
+    }
+    .wa-tooltip::after { content: ''; position: absolute; bottom: -6px; right: 24px; width: 12px; height: 12px; background: white; transform: rotate(45deg); box-shadow: 2px 2px 4px rgba(0,0,0,.08); }
+    @keyframes tooltipFade { 0%,100% { opacity: 1; } 50% { opacity: .7; } }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.7);
+      padding: 60px 24px 0;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text { font-size: 1.5rem; }
+    .footer-brand p { font-size: .87rem; line-height: 1.7; margin-top: 14px; max-width: 280px; color: rgba(255,255,255,.55); }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s; text-decoration: none;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,.15); }
+    .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,.7); }
+    .footer-col h4 { font-size: .9rem; font-weight: 700; color: white; margin-bottom: 16px; text-transform: uppercase; letter-spacing: .5px; font-family: 'DM Sans', sans-serif; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: .87rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin-bottom: 28px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 16px; padding-bottom: 32px;
+    }
+    .footer-legal { font-size: .78rem; color: rgba(255,255,255,.4); line-height: 1.6; max-width: 600px; }
+    .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .footer-right span { font-size: .78rem; color: rgba(255,255,255,.4); }
+    .footer-cuit { background: rgba(255,255,255,.06); border-radius: 6px; padding: 4px 10px; font-size: .78rem; color: rgba(255,255,255,.5); }
+
+    /* ── ANIMATIONS ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in-left { opacity: 0; transform: translateX(-24px); transition: opacity .6s, transform .6s; }
+    .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-in-right { opacity: 0; transform: translateX(24px); transition: opacity .6s, transform .6s; }
+    .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-ctas { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-card-wrap { order: -1; }
+      .calc-inner { grid-template-columns: 1fr; }
+      .reqs-grid { grid-template-columns: 1fr; }
+      .reqs-image { order: -1; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-stat-card { right: 0; bottom: -10px; }
+      .about-stat-card2 { left: 0; top: -10px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .footer-right { align-items: flex-start; }
+      .calc-results { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-values { grid-template-columns: 1fr; }
+      .hero-stat strong { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      </div>
+      <div class="logo-text">Crédito<span>Jubilado</span></div>
+    </a>
+    <nav>
+      <a href="#simulador">Simulador</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#requisitos">Requisitos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#contacto" class="btn-nav">Solicitar ahora</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#simulador" onclick="toggleMenu()">Simulador</a>
+    <a href="#beneficios" onclick="toggleMenu()">Beneficios</a>
+    <a href="#requisitos" onclick="toggleMenu()">Requisitos</a>
+    <a href="#testimonios" onclick="toggleMenu()">Testimonios</a>
+    <a href="#faq" onclick="toggleMenu()">Preguntas frecuentes</a>
+    <a href="#contacto" class="btn-nav" onclick="toggleMenu()">Solicitar ahora</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✓ Aprobación en 24 horas</div>
+      <h1>Préstamos para <em>Jubilados</em> en Argentina – Rápido y Seguro</h1>
+      <p>Obtenés hasta $5.000.000 con cuotas fijas, sin garantía y sin trámites complicados. Diseñado especialmente para jubilados y pensionados del ANSES.</p>
+      <div class="hero-ctas">
+        <a href="#simulador" class="btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+          Simular mi préstamo
+        </a>
+        <a href="#contacto" class="btn-secondary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>+15.000</strong><span>Jubilados atendidos</span></div>
+        <div class="hero-stat"><strong>98%</strong><span>Aprobación online</span></div>
+        <div class="hero-stat"><strong>24 hs</strong><span>Acreditación</span></div>
+        <div class="hero-stat"><strong>12 años</strong><span>En el mercado</span></div>
+      </div>
+    </div>
+    <div class="hero-card-wrap">
+      <div class="hero-card">
+        <div class="card-title">Préstamo Personal – Jubilados</div>
+        <div class="card-amount">$1.500.000</div>
+        <div class="card-sub">Monto solicitado de ejemplo</div>
+        <div class="card-row"><span class="card-label">Plazo</span><span class="card-value">24 meses</span></div>
+        <div class="card-row"><span class="card-label">Cuota mensual</span><span class="card-value">$ 112.340</span></div>
+        <div class="card-row"><span class="card-label">TNA</span><span class="card-value">85% anual</span></div>
+        <div class="card-row"><span class="card-label">Total a pagar</span><span class="card-value">$2.696.160</span></div>
+        <button class="card-btn" onclick="document.getElementById('simulador').scrollIntoView({behavior:'smooth'})">Calcular mi préstamo →</button>
+        <div class="card-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>Sin costo de apertura. Sin letra chica.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-band-inner">
+    <h3>Trabajamos con las principales entidades del país</h3>
+    <div class="trust-logos">
+      <div class="trust-logo"><div style="width:28px;height:28px;background:linear-gradient(135deg,#003087,#0070E0);border-radius:6px;"></div><span class="trust-logo-text">BancoPro</span></div>
+      <div class="trust-logo"><div style="width:28px;height:28px;background:linear-gradient(135deg,#009A44,#00C66E);border-radius:6px;"></div><span class="trust-logo-text">CrediSur</span></div>
+      <div class="trust-logo"><div style="width:28px;height:28px;background:linear-gradient(135deg,#C8102E,#FF5047);border-radius:6px;"></div><span class="trust-logo-text">FinarBank</span></div>
+      <div class="trust-logo"><div style="width:28px;height:28px;background:linear-gradient(135deg,#5C068C,#9B5CF6);border-radius:6px;"></div><span class="trust-logo-text">ArgéntiFin</span></div>
+      <div class="trust-logo"><div style="width:28px;height:28px;background:linear-gradient(135deg,#FF6B00,#FFA340);border-radius:6px;"></div><span class="trust-logo-text">FondoNac</span></div>
+    </div>
+    <div class="trust-pills">
+      <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Sin vueltas</span></div>
+      <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.72L13 18v4h4l-1.22-1.22C18.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 3.09 7.07 6.22 8.78L7 22h4V2.05z"/></svg><span>Aprobación rápida</span></div>
+      <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg><span>100% online</span></div>
+      <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>Datos protegidos</span></div>
+      <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span>Sin comisiones ocultas</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<section id="simulador" class="calc-section">
+  <div class="calc-inner">
+    <div class="calc-info fade-in-left">
+      <div class="section-tag">Simulador de Préstamo</div>
+      <h2 class="section-heading">Calculá tu cuota <br>en segundos</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.7)">Usá nuestro simulador interactivo y conocé al instante cuánto pagarías por mes. Sin compromisos, sin datos personales.</p>
+      <ul class="calc-perks">
+        <li>Cuotas fijas en pesos, sin sorpresas</li>
+        <li>Plazo flexible de 6 a 60 meses</li>
+        <li>Montos desde $100.000 hasta $5.000.000</li>
+        <li>Tasas preferenciales para jubilados ANSES</li>
+        <li>Descuento automático del haber (opcional)</li>
+        <li>Acreditación en cuenta bancaria en 24 hs</li>
+      </ul>
+    </div>
+    <div class="calc-widget fade-in-right">
+      <h3>🧮 Simulador de Cuota</h3>
+
+      <div class="calc-group">
+        <label>Monto del préstamo <span id="lbl-monto">$1.000.000</span></label>
+        <input type="range" id="monto" min="100000" max="5000000" step="50000" value="1000000" oninput="calcUpdate()">
+        <div class="range-labels"><span>$100.000</span><span>$5.000.000</span></div>
+      </div>
+      <div class="calc-group">
+        <label>Plazo en meses <span id="lbl-plazo">24 meses</span></label>
+        <input type="range" id="plazo" min="6" max="60" step="6" value="24" oninput="calcUpdate()">
+        <div class="range-labels"><span>6 m</span><span>60 m</span></div>
+      </div>
+      <div class="calc-group">
+        <label>Tasa Nominal Anual (TNA) <span id="lbl-tna">85%</span></label>
+        <input type="range" id="tna" min="60" max="120" step="5" value="85" oninput="calcUpdate()">
+        <div class="range-labels"><span>60%</span><span>120%</span></div>
+      </div>
+
+      <div class="tna-row">
+        <span>TNA seleccionada: <strong id="tna-display">85%</strong></span>
+        <span>TEA estimada: <strong id="tea-display">—</strong></span>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result highlight">
+          <div class="calc-result-label">Cuota mensual</div>
+          <div class="calc-result-value" id="cuota">—</div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Total a pagar</div>
+          <div class="calc-result-value" id="total">—</div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Intereses totales</div>
+          <div class="calc-result-value" id="intereses">—</div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Costo Financiero (CFT)</div>
+          <div class="calc-result-value" id="cft">—</div>
+        </div>
+      </div>
+
+      <p class="calc-disclaimer">⚠️ Esta simulación es orientativa y no constituye una oferta formal de crédito. Los valores reales dependerán de tu haber mensual y del análisis crediticio aprobado por la entidad financiera.</p>
+      <a href="#contacto" class="calc-cta">Solicitar este préstamo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="beneficios" class="benefits-section">
+  <div class="section-inner">
+    <div class="section-header center fade-in">
+      <div class="section-tag">¿Por qué elegirnos?</div>
+      <h2 class="section-heading">Beneficios diseñados para vos</h2>
+      <p class="section-sub">Entendemos las necesidades de los jubilados y pensionados argentinos. Por eso creamos condiciones que realmente funcionan.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-in" style="transition-delay:.05s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <h3>Sin garantía real</h3>
+        <p>No necesitás poner en juego ningún bien. Tu haber previsional es suficiente respaldo para acceder al crédito.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.1s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h3>Depósito en 24 horas</h3>
+        <p>Una vez aprobado tu crédito, el dinero se acredita directamente en tu cuenta bancaria en menos de 24 horas hábiles.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.15s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+        <h3>Cuotas fijas en pesos</h3>
+        <p>Tu cuota no varía mes a mes. Planificá tu economía con total tranquilidad: sabés exactamente cuánto pagás siempre.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.2s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+        <h3>Atención personalizada</h3>
+        <p>Un asesor dedicado te acompaña en todo el proceso, por teléfono, WhatsApp o en nuestras sucursales en todo el país.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.25s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <h3>Sucursales en todo el país</h3>
+        <p>Presencia en más de 40 ciudades de Argentina. También podés gestionar tu préstamo 100% desde tu casa, sin moverte.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.3s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <h3>Sin comisiones ocultas</h3>
+        <p>El valor que te mostramos en el simulador es real. No hay costos de apertura, seguros obligatorios ni gastos administrativos ocultos.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.35s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div>
+        <h3>Hasta 60 cuotas</h3>
+        <p>Elegís el plazo que más te convenga. A mayor plazo, menor cuota mensual. Tenés hasta 5 años para devolver el crédito.</p>
+      </div>
+      <div class="benefit-card fade-in" style="transition-delay:.4s">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
+        <h3>Datos 100% seguros</h3>
+        <p>Tu información personal está protegida con encriptación bancaria de nivel empresarial y no la compartimos con terceros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="como-funciona">
+  <div class="section-inner">
+    <div class="section-header center fade-in">
+      <div class="section-tag">Proceso simple</div>
+      <h2 class="section-heading">¿Cómo funciona?</h2>
+      <p class="section-sub">En pocos pasos y sin moverte de tu casa, podés tener el dinero acreditado en tu cuenta bancaria.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step fade-in" style="transition-delay:.05s">
+        <div class="step-num">1</div>
+        <h3>Simulá tu préstamo</h3>
+        <p>Usá nuestro simulador online y calculá la cuota ideal según tus posibilidades.</p>
+      </div>
+      <div class="step fade-in" style="transition-delay:.1s">
+        <div class="step-num">2</div>
+        <h3>Completá el formulario</h3>
+        <p>Llenás un formulario simple con tus datos personales y bancarios. Sin papelerío.</p>
+      </div>
+      <div class="step fade-in" style="transition-delay:.15s">
+        <div class="step-num">3</div>
+        <h3>Análisis crediticio</h3>
+        <p>Nuestro equipo verifica tu haber previsional y te da una respuesta en menos de 2 horas hábiles.</p>
+      </div>
+      <div class="step fade-in" style="transition-delay:.2s">
+        <div class="step-num">4</div>
+        <h3>Firmá digitalmente</h3>
+        <p>Recibís el contrato por e-mail o WhatsApp y lo firmás de forma electrónica desde tu celular.</p>
+      </div>
+      <div class="step fade-in" style="transition-delay:.25s">
+        <div class="step-num">5</div>
+        <h3>Recibís el dinero</h3>
+        <p>El monto solicitado se acredita en tu cuenta bancaria en 24 horas hábiles. ¡Listo!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section id="requisitos" class="reqs-section">
+  <div class="section-inner">
+    <div class="reqs-grid">
+      <div class="reqs-image fade-in-left">
+        <img src="https://images.unsplash.com/photo-1594750323502-a8f571ee3e48?w=800&q=80" alt="Jubilados felices accediendo a su crédito en Argentina" loading="lazy" />
+      </div>
+      <div class="fade-in-right">
+        <div class="section-tag">Requisitos</div>
+        <h2 class="section-heading">¿Quién puede solicitar?</h2>
+        <p class="section-sub">Los requisitos son mínimos. Si sos jubilado o pensionado y tenés cuenta bancaria, ya cumplís las condiciones básicas.</p>
+        <ul class="reqs-list">
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 2.5c1.38 0 2.5 1.12 2.5 2.5S16.38 11.5 15 11.5 12.5 10.38 12.5 9s1.12-2.5 2.5-2.5zm5 10h-10v-1c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5v1zm-16-2h4v2H4v-2zm0-2h4v2H4v-2zm0-2h4v2H4v-2zm0-2h4v2H4V8z"/></svg></div>
+            <div class="req-text"><strong>DNI vigente</strong><span>Original, en buen estado, argentino o con residencia permanente.</span></div>
+          </li>
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            <div class="req-text"><strong>Ser jubilado o pensionado</strong><span>ANSES, Caja de Jubilaciones, o fuerzas armadas / seguridad.</span></div>
+          </li>
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+            <div class="req-text"><strong>Cuenta bancaria activa</strong><span>CBU en cualquier banco o entidad financiera argentina.</span></div>
+          </li>
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div>
+            <div class="req-text"><strong>Edad entre 60 y 85 años</strong><span>No hay exclusión por edad dentro de este rango.</span></div>
+          </li>
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+            <div class="req-text"><strong>Haber mínimo de $80.000</strong><span>La cuota no puede superar el 30% del ingreso mensual neto.</span></div>
+          </li>
+          <li class="req-item">
+            <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+            <div class="req-text"><strong>Número de teléfono activo</strong><span>Para verificación de identidad y comunicación con tu asesor.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios" class="testi-section">
+  <div class="section-inner">
+    <div class="section-header center fade-in">
+      <div class="section-tag">Testimonios reales</div>
+      <h2 class="section-heading">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.7)">Más de 15.000 jubilados ya confiaron en nosotros. Leé sus experiencias.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-in" style="transition-delay:.05s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Nunca pensé que sería tan fácil. En 24 horas tenía el dinero en mi cuenta. Me atendieron con mucha paciencia y me explicaron todo. Lo recomiendo a todos los jubilados."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Nilda Ramírez" loading="lazy"></div>
+          <div><div class="testi-name">Nilda Ramírez</div><div class="testi-meta">Jubilada ANSES · Córdoba · $800.000 a 18 meses</div></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in" style="transition-delay:.1s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Quería refaccionar mi casa pero no sabía a quién recurrir. Un vecino me recomendó CréditoJubilado y fue la mejor decisión. Sin papelerío, sin vueltas, todo por WhatsApp."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Roberto Esquivel" loading="lazy"></div>
+          <div><div class="testi-name">Roberto Esquivel</div><div class="testi-meta">Ex docente jubilado · Rosario · $1.200.000 a 24 meses</div></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in" style="transition-delay:.15s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Necesitaba pagar una operación y no tenía ahorros. Me aprobaron el crédito en el día. Las cuotas son fijas y puedo pagarlas sin problemas. Un servicio muy profesional."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/women/72.jpg" alt="María del Carmen López" loading="lazy"></div>
+          <div><div class="testi-name">María del Carmen López</div><div class="testi-meta">Pensionada · Buenos Aires · $2.000.000 a 36 meses</div></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in" style="transition-delay:.2s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★☆</div>
+        <blockquote>"Al principio era escéptico porque nunca había pedido un préstamo online. Pero el asesor me llamó y me guió paso a paso. Muy buena atención. Volvería a usar el servicio."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/men/74.jpg" alt="Héctor Villanueva" loading="lazy"></div>
+          <div><div class="testi-name">Héctor Villanueva</div><div class="testi-meta">Jubilado militar · Mendoza · $500.000 a 12 meses</div></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in" style="transition-delay:.25s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Me ayudaron a comprar los materiales para armar el cuarto de mi nieto. Las cuotas son cómodas y el trato fue excelente. Gente honesta y transparente. Gracias totales."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/women/58.jpg" alt="Graciela Ferreira" loading="lazy"></div>
+          <div><div class="testi-name">Graciela Ferreira</div><div class="testi-meta">Jubilada ANSES · Tucumán · $650.000 a 18 meses</div></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in" style="transition-delay:.3s">
+        <div class="testi-badge">Verificado ✓</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Soy pensionado y tenía muchas dudas sobre si me iban a aprobar. Me sorprendió la rapidez y la amabilidad del equipo. En menos de dos horas me confirmaron el préstamo."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/men/80.jpg" alt="Juan Carlos Medina" loading="lazy"></div>
+          <div><div class="testi-name">Juan Carlos Medina</div><div class="testi-meta">Pensionado · Salta · $900.000 a 24 meses</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-tag">Preguntas frecuentes</div>
+      <h2 class="section-heading">Todo lo que necesitás saber</h2>
+      <p class="section-sub">Resolvemos las dudas más comunes. Si no encontrás tu pregunta, escribinos por WhatsApp.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-aside fade-in-left">
+        <div class="faq-aside-img">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&q=80" alt="Asesor de crédito para jubilados" loading="lazy">
+        </div>
+        <h3>¿Tenés otra pregunta?</h3>
+        <p>Nuestro equipo de asesores especializados está disponible de lunes a viernes de 8:00 a 20:00 hs y los sábados de 9:00 a 13:00 hs.</p>
+        <div class="faq-contact-box">
+          <h4>Consultá sin compromiso</h4>
+          <p>Un asesor te responde en menos de 10 minutos.</p>
+          <a href="https://wa.me/5491100000000?text=Hola,%20tengo%20una%20consulta%20sobre%20préstamos%20para%20jubilados">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.527 5.845L.057 23.986l6.304-1.651A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.838 0-3.568-.493-5.063-1.355l-.363-.215-3.742.981.998-3.648-.236-.373A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="faq-list fade-in-right">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Cuánto dinero puedo solicitar?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">Podés solicitar desde $100.000 hasta $5.000.000 según tu haber mensual neto. El monto máximo equivale a 10 veces tu ingreso mensual, y la cuota no puede superar el 30% del mismo. Nuestro simulador te ayuda a calcular el monto ideal para tu situación.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Cuánto tarda la aprobación?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">El análisis crediticio demora entre 1 y 2 horas hábiles. Una vez aprobado, el dinero se acredita en tu cuenta bancaria dentro de las 24 horas hábiles siguientes a la firma del contrato. En algunos casos puntuales puede demorar hasta 48 horas hábiles.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué tasa de interés aplican?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">Trabajamos con Tasas Nominales Anuales (TNA) desde el 60% hasta el 120% según el monto, el plazo y tu historial crediticio. El Costo Financiero Total (CFT) se detalla en el contrato antes de que lo firmés. Todo es transparente y sin sorpresas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Es necesario tener buen historial crediticio?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">No es excluyente tener historial perfecto. Evaluamos cada caso de forma individual. Si tenés deudas en Veraz o BCRA, igualmente podemos analizar tu solicitud. Muchos de nuestros clientes aprobados tenían historial irregular.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Cómo se pagan las cuotas?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">Las cuotas se pueden pagar mediante débito automático desde tu cuenta bancaria o descuento directo de tu haber previsional (opcional y más conveniente). También podés pagar en ventanilla bancaria o por homebanking con el CBU que te proporcionamos.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Puedo cancelar el préstamo antes del plazo?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">Sí, podés cancelar anticipadamente el préstamo en cualquier momento. El cálculo del capital adeudado se realiza según la normativa del BCRA, y tenés derecho a que se te descuenten los intereses futuros no devengados. Sin penalidades por cancelación anticipada.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Necesito un garante o aval?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">No. No necesitás garante, ni bienes como garantía, ni ningún tipo de aval. Tu haber previsional es el único respaldo requerido. Esto simplifica enormemente el proceso y lo hace accesible para todos los jubilados y pensionados.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            ¿Debo ser cliente de algún banco en particular?
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </div>
+          <div class="faq-a">No. Trabajamos con cualquier banco argentino. Solo necesitás tener una cuenta bancaria activa a tu nombre con CBU, independientemente de la entidad: Banco Nación, Galicia, Santander, BBVA, Macro, HSBC, Brubank, Naranja X, Mercado Pago, o cualquier otro.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros" class="about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-stack fade-in-left">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Equipo de CréditoJubilado" loading="lazy">
+        </div>
+        <div class="about-stat-card2"><strong>2012</strong><span>Año de fundación</span></div>
+        <div class="about-stat-card"><strong>15.000+</strong><span>Créditos otorgados</span></div>
+      </div>
+      <div class="about-text fade-in-right">
+        <div class="section-tag">Sobre nosotros</div>
+        <h2 class="section-heading">12 años cuidando el bolsillo de los jubilados</h2>
+        <p class="section-sub">CréditoJubilado nació en 2012 con una misión clara: brindar soluciones financieras dignas, transparentes y accesibles para los jubilados y pensionados de Argentina. Somos una fintech regulada que opera bajo la supervisión del Banco Central de la República Argentina (BCRA) y la Comisión Nacional de Valores (CNV).</p>
+        <p style="font-size:.95rem;color:var(--text-light);line-height:1.7;margin-bottom:16px;">A lo largo de más de una década, hemos otorgado más de 15.000 créditos en todo el país, desde la Patagonia hasta el NOA. Nuestro equipo de más de 120 profesionales trabaja todos los días para que vos puedas acceder al dinero que necesitás con dignidad y tranquilidad.</p>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value-icon"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+            <div><h4>Transparencia</h4><p>Sin letra chica ni sorpresas.</p></div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div><h4>Compromiso</h4><p>Tu bienestar es nuestra prioridad.</p></div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div><h4>Responsabilidad</h4><p>Regulados y auditados por el BCRA.</p></div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+            <div><h4>Experiencia</h4><p>12 años en el mercado argentino.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" class="contact-section">
+  <div class="section-inner">
+    <div class="section-header center fade-in">
+      <div class="section-tag">Contacto</div>
+      <h2 class="section-heading">Empezá hoy tu solicitud</h2>
+      <p class="section-sub">Completá el formulario y un asesor especializado te contactará en menos de 30 minutos.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-box fade-in-left">
+        <h3>Solicitar préstamo</h3>
+        <p>Sin compromiso. Te respondemos en minutos.</p>
+        <form onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre *</label>
+              <input type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label>Apellido *</label>
+              <input type="text" placeholder="Tu apellido" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Teléfono / WhatsApp *</label>
+            <input type="tel" placeholder="Ej: 011 15-1234-5678" required>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tucorreo@mail.com">
+          </div>
+          <div class="form-group">
+            <label>Monto que necesitás *</label>
+            <select required>
+              <option value="">Seleccioná un monto</option>
+              <option>Hasta $200.000</option>
+              <option>$200.001 – $500.000</option>
+              <option>$500.001 – $1.000.000</option>
+              <option>$1.000.001 – $2.000.000</option>
+              <option>$2.000.001 – $5.000.000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tipo de beneficio *</label>
+            <select required>
+              <option value="">Seleccioná</option>
+              <option>Jubilado ANSES</option>
+              <option>Pensionado ANSES</option>
+              <option>Jubilado / Pensionado provincial</option>
+              <option>Caja de jubilaciones profesionales</option>
+              <option>Fuerzas armadas / seguridad</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Solicitar préstamo gratuito →</button>
+          <p class="form-note">🔒 Tus datos están protegidos. No los compartimos con terceros. Al enviar aceptás nuestra Política de Privacidad.</p>
+        </form>
+        <div id="form-success" style="display:none;background:#F0FFF9;border:1px solid #00A878;border-radius:12px;padding:24px;text-align:center;margin-top:16px;">
+          <div style="font-size:2rem;margin-bottom:8px;">✅</div>
+          <strong style="color:var(--navy);font-size:1.1rem;">¡Solicitud enviada con éxito!</strong>
+          <p style="color:var(--text-light);font-size:.9rem;margin-top:8px;">Un asesor te contactará en los próximos 30 minutos por WhatsApp o teléfono.</p>
+        </div>
+      </div>
+      <div class="contact-info fade-in-right">
+        <div class="whatsapp-cta-box">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.527 5.845L.057 23.986l6.304-1.651A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.838 0-3.568-.493-5.063-1.355l-.363-.215-3.742.981.998-3.648-.236-.373A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          <div>
+            <h4>¿Preferís hablar por WhatsApp?</h4>
+            <p>Chateá ahora con un asesor y recibí respuesta inmediata.</p>
+            <a href="https://wa.me/5491100000000?text=Hola,%20quiero%20información%20sobre%20préstamos%20para%20jubilados">Abrir WhatsApp →</a>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div>
+            <h4>Teléfono gratuito</h4>
+            <p>0800-888-5432 (sin costo)</p>
+            <p style="font-size:.8rem;margin-top:4px;">Lun a Vie 8:00–20:00 | Sáb 9:00–13:00</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div>
+            <h4>Correo electrónico</h4>
+            <a href="mailto:info@creditojubilado.com.ar">info@creditojubilado.com.ar</a>
+            <p style="font-size:.8rem;margin-top:4px;">Respondemos en el mismo día hábil</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div>
+            <h4>Casa Central</h4>
+            <p>Av. Corrientes 1234, Piso 8<br>Ciudad Autónoma de Buenos Aires (C1043AAZ)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text" style="color:white;font-family:'Playfair Display',serif;font-size:1.5rem;">Crédito<span style="color:var(--teal)">Jubilado</span></div>
+        <p>Soluciones financieras diseñadas especialmente para jubilados y pensionados de la República Argentina. 12 años de experiencia y confianza.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="rgba(255,255,255,.7)" stroke-width="2"/></svg></a>
+          <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--navy)"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#simulador">Simulador de préstamo</a></li>
+          <li><a href="#beneficios">Préstamos personales</a></li>
+          <li><a href="#requisitos">Refinanciación</a></li>
+          <li><a href="#">Crédito con descuento de haber</a></li>
+          <li><a href="#">Préstamos para pensionados</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#">Nuestro equipo</a></li>
+          <li><a href="#">Sucursales</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Defensa del consumidor</a></li>
+          <li><a href="#">Información al usuario financiero</a></li>
+          <li><a href="#">Régimen de transparencia BCRA</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <strong style="color:rgba(255,255,255,.6);font-size:.8rem;">AVISO LEGAL Y REGULATORIO:</strong><br>
+        CréditoJubilado S.A. es una entidad financiera registrada bajo el Nº 12.456 ante el Banco Central de la República Argentina (BCRA). Opera en conformidad con la Ley 21.526 de Entidades Financieras y la Ley 25.065 de Tarjetas de Crédito. Las simulaciones presentadas en este sitio son meramente ilustrativas y no constituyen una oferta vinculante de crédito. Las condiciones definitivas del préstamo dependerán del análisis crediticio individual y estarán sujetas a la normativa vigente del BCRA. Tasa de interés variable sujeta a actualización. El otorgamiento del crédito queda condicionado a la verificación de los datos proporcionados y a la capacidad de pago del solicitante. Consulte la información sobre el Costo Financiero Total (CFT) antes de aceptar el crédito. En caso de incumplimiento se aplicarán intereses punitorios según lo establecido en el contrato. Usted tiene derecho a cancelar el préstamo en forma anticipada sin penalidad conforme al Art. 193 de la Ley 26.361. Para consultas y reclamos: 0800-888-5432 (línea gratuita). Ante el BCRA: 0800-999-6663.
+      </div>
+      <div class="footer-right">
+        <div class="footer-cuit">CUIT: 30-71234567-8</div>
+        <span>© 2024 CréditoJubilado S.A. — Todos los derechos reservados</span>
+        <span>Av. Corrientes 1234, Piso 8 · CABA · CP C1043AAZ</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="wa-tooltip" id="wa-tooltip">¡Consultá sin cargo! 💬</div>
+<a href="https://wa.me/5491100000000?text=Hola,%20quiero%20información%20sobre%20préstamos%20para%20jubilados" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.527 5.845L.057 23.986l6.304-1.651A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.838 0-3.568-.493-5.063-1.355l-.363-.215-3.742.981.998-3.648-.236-.373A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+  // ── HEADER SCROLL ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    // Hide tooltip after scroll
+    if (window.scrollY > 200) document.getElementById('wa-tooltip').style.display = 'none';
+  });
+
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    const nav = document.getElementById('mobile-nav');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // ── CALCULATOR ──
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('es-AR');
+  }
+  function calcUpdate() {
+    const monto = +document.getElementById('monto').value;
+    const plazo = +document.getElementById('plazo').value;
+    const tna = +document.getElementById('tna').value;
+
+    document.getElementById('lbl-monto').textContent = fmt(monto);
+    document.getElementById('lbl-plazo').textContent = plazo + ' meses';
+    document.getElementById('lbl-tna').textContent = tna + '%';
+    document.getElementById('tna-display').textContent = tna + '%';
+
+    // French amortization
+    const tm = tna / 100 / 12;
+    const cuota = monto * tm * Math.pow(1 + tm, plazo) / (Math.pow(1 + tm, plazo) - 1);
+    const total = cuota * plazo;
+    const intereses = total - monto;
+    const tea = (Math.pow(1 + tm, 12) - 1) * 100;
+    const cft = tea * 1.12; // approximate CFT
+
+    document.getElementById('cuota').textContent = fmt(cuota);
+    document.getElementById('total').textContent = fmt(total);
+    document.getElementById('intereses').textContent = fmt(intereses);
+    document.getElementById('cft').textContent = cft.toFixed(1) + '%';
+    document.getElementById('tea-display').textContent = tea.toFixed(1) + '%';
+
+    // Progress bar update
+    const range = document.getElementById('monto');
+    const pct = (monto - 100000) / (5000000 - 100000) * 100;
+    range.style.background = `linear-gradient(to right, var(--blue) ${pct}%, var(--gray-100) ${pct}%)`;
+    const pRange = document.getElementById('plazo');
+    const pPct = (plazo - 6) / (60 - 6) * 100;
+    pRange.style.background = `linear-gradient(to right, var(--blue) ${pPct}%, var(--gray-100) ${pPct}%)`;
+    const tRange = document.getElementById('tna');
+    const tPct = (tna - 60) / (120 - 60) * 100;
+    tRange.style.background = `linear-gradient(to right, var(--blue) ${tPct}%, var(--gray-100) ${tPct}%)`;
+  }
+  calcUpdate();
+
+  // ── FAQ ──
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── SCROLL ANIMATIONS ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => obs.observe(el));
+
+  // ── FORM ──
+  function handleForm(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // ── WA TOOLTIP AUTO-HIDE ──
+  setTimeout(() => {
+    const t = document.getElementById('wa-tooltip');
+    if (t) t.style.opacity = '0';
+    setTimeout(() => t && (t.style.display = 'none'), 1000);
+  }, 5000);
+</script>
+</body>
+</html>
